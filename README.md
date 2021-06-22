@@ -42,7 +42,7 @@ docker info
 docker versión 
 
 **************************************************************************************************
-#Imagenes en Docker
+# Imagenes en Docker
 
 https://hub.docker.com/
 
@@ -52,83 +52,84 @@ https://hub.docker.com/
 docker search 
 
 **************************************************************************************************
-Bajar imágenes
+## Bajar imágenes
 
- docker pull IMAGEN
+docker pull IMAGEN
 
 Bajar container hello-world 
- docker run hello-world
+
+docker run hello-world
 
 **************************************************************************************************
-Ver containers en ejecución
+## Ver containers en ejecución
 
-  docker ps
-
-**************************************************************************************************
-Ver Container creados y status
-
- docker ps -a
+docker ps
 
 **************************************************************************************************
-Borrar Containers 
+## Ver Container creados y status
 
- docker rm ID
-
-**************************************************************************************************
-Borrar todos los containers
-
- docker rm $(docker ps -a -q)
+docker ps -a
 
 **************************************************************************************************
-Listar dentro del container creado
+## Borrar Containers 
 
- docker run ubuntu ls
+docker rm ID
 
 **************************************************************************************************
-ejecutar un bash de un linux
+## Borrar todos los containers
 
- docker run -i -t ubuntu bash
+docker rm $(docker ps -a -q)
+
+**************************************************************************************************
+## Listar dentro del container creado
+
+docker run ubuntu ls
+
+**************************************************************************************************
+## ejecutar un bash de un linux
+
+docker run -i -t ubuntu bash
 root@ee238cbe9a41:/#
 
 Corremos un ~# docker run -it ubuntu
 Y si salimos con "ctrl""p"+"q" se sigue ejecutando
 
 **************************************************************************************************
-Conectarnos al bash de un container en ejecución 
+## Conectarnos al bash de un container en ejecución 
 
- docker attach "CONTAINER ID"
-
-**************************************************************************************************
-Poner nombre al contenedor 
-
- docker run --name ubuntu1 -it ubuntu
+docker attach "CONTAINER ID"
 
 **************************************************************************************************
-Crear nueva imagen a partir de un contenedor
+## Poner nombre al contenedor 
 
- docker commit b74cc8ee49ed ubuntunuevo
+docker run --name ubuntu1 -it ubuntu
+
+**************************************************************************************************
+## Crear nueva imagen a partir de un contenedor
+
+docker commit b74cc8ee49ed ubuntunuevo
 sha256:057337500e4e439171a0e3f7110835e0354f4f383c750b0c919735319012bfdf
 
-usamos la imagen nueva 
- docker run -it ubuntunuevo 
+## usamos la imagen nueva 
 
-Hacemos la nueva forma de commit a partir de un archivo 
+docker run -it ubuntunuevo 
 
- docker commit --change='CMD ["apache2ctl", "-D FOREGROUND"]' -c "EXPOSE 85" a294c60441e4 apache2
+## Hacemos la nueva forma de commit a partir de un archivo 
+
+docker commit --change='CMD ["apache2ctl", "-D FOREGROUND"]' -c "EXPOSE 85" a294c60441e4 apache2
 sha256:8a7d8287aaaa6f3a3b996d7ff0ec70182984ea1deb7e2549617333441301d22b
 
-CORREMOS IMAGEN creada
- docker run -d -p 5000:80 apache2 
+## CORREMOS IMAGEN creada
+docker run -d -p 5000:80 apache2 
 D99df44d7a1f305089889ec577a8de7748dd4ec37a53d1c1f91e5e677d67d770
 
 **************************************************************************************************
+## Eliminar imagen 
 
-Eliminar imagen 
-
- docker rmi IMAGEN-ID
+docker rmi IMAGEN-ID
 
 **************************************************************************************************
-DOCKERFILE:
+# DOCKERFILE:
 
 Creamos un archivo con el nombre Dockerfile
 ####################################################################
