@@ -6,11 +6,10 @@ Pass 8vgeKaP1rj
 Configurar proxy en Docker
 
 vi /etc/systemd/system/docker.service.d/http-proxy.conf
-#################################################
+```
 [Service]
 Environment="HTTP_PROXY=10.210.56.35:3128" "NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-#################################################
-
+```
  systemctl daemon-reload
 
  systemctl restart docker
