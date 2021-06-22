@@ -42,14 +42,14 @@ docker info
 docker versión 
 
 **************************************************************************************************
-MAGENES DE DOCKER
+#Imagenes en Docker
 
 https://hub.docker.com/
 
 **************************************************************************************************
-Buscamos imágenes en hub.docker.com
+## Buscamos imágenes en hub.docker.com
 
- docker search 
+docker search 
 
 **************************************************************************************************
 Bajar imágenes
