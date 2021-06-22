@@ -3,44 +3,43 @@ User diegomartinmunoz829
 Pass 8vgeKaP1rj
 
 ***************************************************************************************************
-Configurar proxy en Docker
+# Configurar proxy en Docker
 
-# vi /etc/systemd/system/docker.service.d/http-proxy.conf
+vi /etc/systemd/system/docker.service.d/http-proxy.conf
 ```
 [Service]
 Environment="HTTP_PROXY=10.210.56.35:3128" "NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
 ```
-# systemctl daemon-reload
+systemctl daemon-reload
 
-# systemctl restart docker
+systemctl restart docker
 
-# systemctl show --property=Environment docker
+systemctl show --property=Environment docker
 Environment=HTTP_PROXY=10.210.56.35:3128 NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp 
 
 ***************************************************************************************************
-Autocompletar en Docker 
+# Autocompletar en Docker 
 
- yum -y install bash-completion
+yum -y install bash-completion
 
 **************************************************************************************************
-Instalar Docker en UBUNTU
+# Instalar Docker en UBUNTU
 
 Ir a la Url "https://get.docker.com/"
 
- curl -fsSL https://get.docker.com -o get-docker.sh
- sh get-docker.sh 
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh 
 
 **************************************************************************************************
-INFORMACIÓN DEL DOCKER
+# Informacion del docker
 
- docker info
+docker info
 
 **************************************************************************************************
 
+# Version Docker
 
-VERSIÓN DOCKER
-
- docker versión 
+docker versión 
 
 **************************************************************************************************
 MAGENES DE DOCKER
